@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<AssemblyName>Aggregator.$(MSBuildProjectName)</AssemblyName>
+	<RootNamespace>Aggregator.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+	<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Cfg\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationServices.Interfaces\ApplicationServices.Interfaces.csproj" />
+    <ProjectReference Include="..\DomainServices.Interfaces\DomainServices.Interfaces.csproj" />
+    <ProjectReference Include="..\Shared\Clients.Aggregator\Clients.Aggregator.csproj" />
+    <ProjectReference Include="..\Shared\Clients.ProviderOne\Clients.ProviderOne.csproj" />
+    <ProjectReference Include="..\Shared\Clients.ProviderTwo\Clients.ProviderTwo.csproj" />
+    <ProjectReference Include="..\Shared\Services\Services\Services.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<AssemblyName>Aggregator.$(MSBuildProjectName)</AssemblyName>
+	<RootNamespace>Aggregator.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Mvc\**" />
+    <Content Remove="Controllers\Mvc\**" />
+    <EmbeddedResource Remove="Controllers\Mvc\**" />
+    <None Remove="Controllers\Mvc\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationServices.Implementation\ApplicationServices.Implementation.csproj" />
+    <ProjectReference Include="..\Caching.InMemory\Caching.InMemory.csproj" />
+    <ProjectReference Include="..\DomainServices.Implementation\DomainServices.Implementation.csproj" />
+    <ProjectReference Include="..\Shared\Site\Site.csproj" />
+    <ProjectReference Include="..\UseCases\UseCases.csproj" />
+  </ItemGroup>
+
+</Project>
